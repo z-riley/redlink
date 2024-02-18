@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "messageType": {
+            "type": "string",
+            "enum": ["EVENT", "COMMAND", "REQUEST", "RESPONSE"]
+        },
+        "topic": {
+            "type": "string",
+            "enum": ["status", "interestingTopic1", "interestingTopic2"]
+            },
+        "source": {
+            "type": "string"
+        },
+        "payload": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "topic",
+        "messageType",
+        "payload"
+    ]
+}
