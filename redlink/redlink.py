@@ -25,7 +25,7 @@ class RedLinkCore():
         self.source = source
         redis_host = os.getenv("REDIS_HOST", default="localhost")
         redis_port = os.getenv("REDIS_PORT", default="6379")
-        self._redis_client = redis.StrictRedis(host=redis_host)
+        self._redis_client = redis.StrictRedis(host=redis_host, port=redis_port)
         self._pubsub = self._redis_client.pubsub()
         self._callback_table = {}
 
@@ -114,7 +114,7 @@ class RedLinkGateway(RedLinkCore):
         super().__init__(schema_path, source)
 
     def event(self, topic, payload):
-        self.publish("COMMAND", topic, payload)
+        self.publish("EVENT", topic, payload)
     
     def command(self, topic, payload):
         self.publish("COMMAND", topic, payload)

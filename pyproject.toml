@@ -1,0 +1,11 @@
+[project]
+name = "redlink"
+version = "0.0.1"
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    'redis  >= 5.2, < 6',
+    'jsonschema >= 4.23, < 5',
+    'loguru >= 0.7, < 0.8',
+]

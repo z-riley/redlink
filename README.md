@@ -1,7 +1,8 @@
 # RedLink
 
-RedLink is a Redis pub-sub wrapper which defines various message types.
-Topics must be defined in a schema.
+RedLink can be used to send structured messages over Redis pub-sub.
+
+The structure of the messages can be defined by the user in a JSON schema. If no schema is supplied, the default [schema.json](schema.json) is used.
 
 ## Message Types
 
